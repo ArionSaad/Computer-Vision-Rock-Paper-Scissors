@@ -46,3 +46,41 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
+## Milestone 3
+
+- The user is asked to input one of the three options and the computer makes a random choice. Based on these two choices, if-else conditions are used to determine who won. This is wrapped up in a function.
+
+```python
+def game():
+    while True:
+        #computer making a choice
+        rps = ["rock", "paper", "scissors"]
+        comp_choice = random.choice(rps)
+        #asking player for input
+        player_choice = input("Make a choice")
+        #determining who the winner is
+        if player_choice == "rock" and comp_choice == "rock":
+            print("Draw")
+        elif player_choice == "paper" and comp_choice == "rock":
+            print("Win")
+        elif player_choice == "scissors" and comp_choice == "rock":
+            print("Lose")
+        elif player_choice == "rock" and comp_choice == "paper":
+            print("Lose")
+        elif player_choice == "paper" and comp_choice == "paper":
+            print("Draw")
+        elif player_choice == "scissors" and comp_choice == "paper":
+            print("Win")
+        elif player_choice == "rock" and comp_choice == "scissors":
+            print("Win")
+        elif player_choice == "paper" and comp_choice == "scissors":
+            print("Lose")
+        elif player_choice == "scissors" and comp_choice == "scissors":
+            print("Draw")
+        else:
+            print("Not Valid input")
+```
+![Screenshot from 2022-03-30 21-10-27](https://user-images.githubusercontent.com/101988764/160922301-13a2c539-aeb0-44f3-bb9e-eff3da97c372.png)
+
+
+
