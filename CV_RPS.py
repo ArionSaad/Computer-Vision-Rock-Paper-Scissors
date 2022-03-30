@@ -31,13 +31,7 @@ while True:
     #take the final prediction and find the index of the max value to decide what the player input is
     #in a different method make a random choice for the computer and compare with the player choice
 
-    #if
-    # #computer makes a random choice
-    # rps = ["rock", "paper", "scissors"]
-    # comp_choice = random.choice(rps)
-
-    # #asking player for input
-    # player_choice = input("Make a choice")
+    
     
 
     # Press q to close the window
@@ -50,3 +44,33 @@ cap.release()
 # Destroy all the windows
 cv2.destroyAllWindows()
 
+
+def game():
+    while True:
+        #computer making a choice
+        rps = ["rock", "paper", "scissors"]
+        comp_choice = random.choice(rps)
+        #asking player for input
+        player_choice = input("Make a choice")
+        #determining who the winner is
+        if player_choice == "rock" and comp_choice == "rock":
+            print("Draw")
+        elif player_choice == "paper" and comp_choice == "rock":
+            print("Win")
+        elif player_choice == "scissors" and comp_choice == "rock":
+            print("Lose")
+        elif player_choice == "rock" and comp_choice == "paper":
+            print("Lose")
+        elif player_choice == "paper" and comp_choice == "paper":
+            print("Draw")
+        elif player_choice == "scissors" and comp_choice == "paper":
+            print("Win")
+        elif player_choice == "rock" and comp_choice == "scissors":
+            print("Win")
+        elif player_choice == "paper" and comp_choice == "scissors":
+            print("Lose")
+        elif player_choice == "scissors" and comp_choice == "scissors":
+            print("Draw")
+        else:
+            print("Not Valid input")
+game()
