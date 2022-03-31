@@ -102,7 +102,7 @@ max = np.argmax(prediction)
 
 ![Screenshot from 2022-03-31 19-08-00](https://user-images.githubusercontent.com/101988764/161121558-4a02d0a9-5df1-44cd-967d-fdef68cba5be.png)
 
-- In order to create a timer
+- Timer is created using the time.time() method. After an established period of time the while loop takes the camera input and runs the game method. A counter is set up to count the number of wins between the player and the computer and the game ends on either gets 3 wins.
 - 
 ![Screenshot from 2022-03-31 20-33-10](https://user-images.githubusercontent.com/101988764/161134888-a33336a0-b978-47c0-b688-b9ee059a5a1a.png)
 
