@@ -103,6 +103,10 @@ max = np.argmax(prediction)
 ![Screenshot from 2022-03-31 19-08-00](https://user-images.githubusercontent.com/101988764/161121558-4a02d0a9-5df1-44cd-967d-fdef68cba5be.png)
 
 - In order to create a timer
+- 
+![Screenshot from 2022-03-31 20-33-10](https://user-images.githubusercontent.com/101988764/161134888-a33336a0-b978-47c0-b688-b9ee059a5a1a.png)
+
+
 
 
 
