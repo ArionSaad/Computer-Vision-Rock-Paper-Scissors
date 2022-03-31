@@ -82,5 +82,29 @@ def game():
 ```
 ![Screenshot from 2022-03-30 21-10-27](https://user-images.githubusercontent.com/101988764/160922301-13a2c539-aeb0-44f3-bb9e-eff3da97c372.png)
 
+## Milestone 4
+
+- The code used in milestone 2 produced a prediction based on what the camera is picking up. The prediction variable is an array of 4 numbers indicating the possibility of the camera input corresponding to either rock, paper, scissors or nothing. 
+- By taking the index of the highest number in the array, it can be determined wether the camera input is one of the 4 options listed above. This is the code used:
+```python
+max = np.argmax(prediction)
+    if max == 0:
+        player_choice = "rock"
+    elif max == 1:
+        player_choice = "paper"
+    elif max == 2: 
+        player_choice = "scissors"
+    else:
+        player_choice = "None"
+```
+
+- The game method is modified to take the player_choice input and is called directly from the while loop. This produces a list of player choices and win/loss/draw conditions.
+
+![Screenshot from 2022-03-31 19-08-00](https://user-images.githubusercontent.com/101988764/161121558-4a02d0a9-5df1-44cd-967d-fdef68cba5be.png)
+
+- In order to create a timer
+
+
+
 
 
