@@ -100,7 +100,6 @@ def game_while ():
         # Press q to close the window
         #print(prediction)
         if cv2.waitKey(1) & 0xFF == ord('q'):
-            
             break
 
 
