@@ -2,10 +2,6 @@
 
 > This project is about creating the game Rock Paper Scissors which can be played against the computer using a webcam.
 
-## Notes, delete later
--Installed keras and numpy module. 
--using virtual environment "RPS_env", activated by "conda activate RPS_env"
-
 ## Milestone 1
 
 - Using Teachable Machine a model was created that recognizes the player holding a rock, paper or scissors shape with their hand. This involved taking 50 - 100 pictures of holding those shapes.
