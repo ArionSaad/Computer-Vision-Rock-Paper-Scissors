@@ -106,6 +106,34 @@ max = np.argmax(prediction)
 - 
 ![Screenshot from 2022-03-31 20-33-10](https://user-images.githubusercontent.com/101988764/161134888-a33336a0-b978-47c0-b688-b9ee059a5a1a.png)
 
+- Added a feature where the programme keeps track of what the player chose previously and based on that will make future choices. This increases the difficulty of the game as the player will now need to varry their inputs or they will lose to the computer. 
+
+```python
+def ego(player_choice):
+    list_player_choice.append(player_choice)
+    rps = ["rock", "paper", "scissors"]
+    comp_choice = random.choice(rps)
+    if len(list_player_choice) >= 2:
+        player_bias = max(list_player_choice, key=list_player_choice.count)
+        if player_bias == "rock":
+            comp_choice = "paper"
+        elif player_bias == "paper":
+            comp_choice = "scissors"
+        elif player_bias == "scissors":
+            comp_choice = "rock"
+        elif player_bias == "none":
+            rps = ["rock", "paper", "scissors"]
+            comp_choice = random.choice(rps)
+    game(player_choice, comp_choice)
+```
+
+![Screenshot from 2022-04-04 19-00-35](https://user-images.githubusercontent.com/101988764/161603923-3caceb76-956c-4849-a190-ab4f4e1f45b4.png)
+
+
+## Conclusion
+
+- UI is one area where the game is lacking. Easier visibility of the timer and the wins or losses would make the game more readable. 
+- Could be possible to build an entire database of player inputs from multiple games and based on that the computer tries to predict what the player will choose next.
 
 
 
