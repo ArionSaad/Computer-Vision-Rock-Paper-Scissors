@@ -102,7 +102,7 @@ max = np.argmax(prediction)
 
 ![Screenshot from 2022-03-31 20-33-10](https://user-images.githubusercontent.com/101988764/161134888-a33336a0-b978-47c0-b688-b9ee059a5a1a.png)
 
-- Added a feature where the programme keeps track of what the player chose previously and based on that will make future choices. This increases the difficulty of the game as the player will now need to varry their inputs or they will lose to the computer. 
+- Added a feature where the programme keeps track of what the player chose previously and based on that will make future choices. This increases the difficulty of the game as the player will now need to vary their inputs or they will lose to the computer. 
 
 ```python
 def ego(player_choice):
