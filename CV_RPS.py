@@ -9,12 +9,14 @@ data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 it_takes = 3
 player_wins = 0
 computer_wins = 0
+list_player_choice = []
+wins_to_end = 5
 
 #function that defines the game
-def game(player_choice):
+def game(player_choice, comp_choice):
     #computer making a choice
-    rps = ["rock", "paper", "scissors"]
-    comp_choice = random.choice(rps)
+    #rps = ["rock", "paper", "scissors"]
+    #comp_choice = random.choice(rps)
     print(f'Computer chose {comp_choice}')
     global player_wins
     global computer_wins
@@ -48,7 +50,23 @@ def game(player_choice):
     print(f'{player_wins} - {computer_wins}')
     game_while()
 
-
+#method that gives the computer memory of what the player chose previously and allows the computer to make choice based on that
+def ego(player_choice):
+    list_player_choice.append(player_choice)
+    rps = ["rock", "paper", "scissors"]
+    comp_choice = random.choice(rps)
+    if len(list_player_choice) >= 2:
+        player_bias = max(list_player_choice, key=list_player_choice.count)
+        if player_bias == "rock":
+            comp_choice = "paper"
+        elif player_bias == "paper":
+            comp_choice = "scissors"
+        elif player_bias == "scissors":
+            comp_choice = "rock"
+        elif player_bias == "none":
+            rps = ["rock", "paper", "scissors"]
+            comp_choice = random.choice(rps)
+    game(player_choice, comp_choice)
 
 def game_while ():
     begin_time = time.time()
@@ -66,7 +84,7 @@ def game_while ():
         #ending the game after set number of player wins
         global player_wins
         global computer_wins
-        if player_wins == 3 or computer_wins == 3:
+        if player_wins == wins_to_end or computer_wins == wins_to_end:
             break
 
         # creating a timer
@@ -86,8 +104,8 @@ def game_while ():
             else:
                 player_choice = "None"
             print(f"You chose {player_choice}")
-            #calls the game function with the player choice
-            game(player_choice)
+            #calls the ego function with the player choice
+            ego(player_choice)
             break
 
         #set a timer for this while loop to end and whatever the player input is at the end is the player input
@@ -105,9 +123,9 @@ def game_while ():
 
 game_while()
 
-if player_wins == 3:
+if player_wins == wins_to_end:
     print("Good job beating the machine")
-elif computer_wins == 3:
+elif computer_wins == wins_to_end:
     print("Tough luck, try next time")
 else:
     print("Qutting already?!")
